@@ -8,9 +8,9 @@ ports="6377 6378 6379"
 measure=3
 # connection=100
 # number=100
-connections="10"
-numbers="3"
-ratios="1:1"
+connections="10 100 "
+numbers="10 100 1000"
+ratios="1:1 1:0 1:9 0:1"
 
 # Nested for loops
 for server in $servers; do
