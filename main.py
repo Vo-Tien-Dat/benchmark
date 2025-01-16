@@ -37,7 +37,7 @@ def command_benmark_of_caching(server=None, port=None, connection=10, number=10,
   if(port == None):
     raise ValueError("Port is required")
   argument_of_command.append(f'-p {port}')
-  prefix_file = get_prefix_path(server, port, measure) 
+  prefix_file = get_prefix_path(server, port, connection, number, measure) 
   argument_of_command.append(f'--hdr-file-prefix {prefix_file}')
   argument_of_command.append(' --distinct-client-seed --hide-histogram')
   argument_of_command.append(f'-t {thread}')
