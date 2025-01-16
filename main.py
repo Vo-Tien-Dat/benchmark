@@ -127,13 +127,13 @@ if __name__ == "__main__":
     index = 1
     while index <= measure: 
       print(f'Starting the {index} calculation')
-      path = get_path('log', server, port, index)
+      path = get_path('log', server, port, connection, number, index)
       check_and_create_folder(path)
       execute_task_in_directory(path, command_benmark_of_caching, server, port, connection, number, ratio, index, thread)
       print(f'End the {index} calculation')
       index = index + 1
 
-    source_directory = os.getcwd() + f"/{get_path( 'log', server, port)}/"
-    target_directory = os.getcwd() + f"/results/{get_path(server, port)}/"
-    # group data to check stable caching performance
-    find_and_copy_hgrm_files(source_directory, target_directory) 
+      source_directory = os.getcwd() + f"/{get_path( 'log', server, port, connection, number)}/"
+      target_directory = os.getcwd() + f"/results/{get_path(server, port, connection, number)}/"
+      # group data to check stable caching performance
+      find_and_copy_hgrm_files(source_directory, target_directory) 
